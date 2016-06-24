@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Chrome URL carousel",
+  "description": "This extension change current tab URL base on an URL list",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "carousel.png",
+    "default_popup": "popup.html",
+    "default_title": "Click here!"
+  },
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+  "icons": {
+    "16": "carousel-16.png",
+    "128": "carousel-128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "alarms"
+  ]
+}

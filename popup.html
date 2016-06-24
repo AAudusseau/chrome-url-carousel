@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        min-width: 250px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 18px;
+      }
+      #url-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      #url-list > li {
+        padding: 5px 8px;
+        position: relative;
+      }
+      #url-list > li:nth-child(even) {
+        background: #CCC
+      }
+      #url-list > li:nth-child(odd) {
+        background: #FFF
+      }
+      #url-list > li.active {
+        background: #c2e4c2;
+      }
+      #url-list > li > a {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        color: #d45757;
+        text-decoration: none;
+        background: #e6e6e6;
+        display: block;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        line-height: 20px;
+      }
+      #url-list > li > a:hover {
+        background: #d2d2d2;
+      }
+      #url-creation {
+        display: flex;
+        margin: 10px 0;
+      }
+      #url-creation > input {
+        flex-grow: 4;
+      }
+      #url-creation > button {
+        flex-grow: 1;
+      }
+      #running-label {
+        visibility: hidden;
+        float: right;
+        font-size: 10px;
+        font-size: 13px;
+        line-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chrome URL carousel</h1>
+    <ul id="url-list"></ul>
+    <form id="url-creation">
+      <input type="text" id="new-url">
+      <button type="submit" placeholder="Add an URL">Add</button>
+    </form>
+    <form>
+      <label for="interval-duration">Interval duration in minutes</label>
+      <input type="number" id="interval-duration" max=100 min=1>
+    </form>
+    <hr>
+    <button type="button" id="start-button">Start</button>
+    <button type="button" id="stop-button">Stop</button>
+    <span id="running-label" class="pull-right"><em>Running</em></span>
+    <script src="popup.js"></script>
+  </body>
+</html>
+
